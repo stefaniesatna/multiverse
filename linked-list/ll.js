@@ -49,18 +49,17 @@ class LinkedList {
     partition(x){
         // handle empty list
         if (this.head === null){
-            return
+            return this.head
         }
         // handle list of one 
         if (!this.head.next){
             return this.head
         }
-
+        let llLeft = new LinkedList()
+        let llRight = new LinkedList()
         let current = this.head
-
-        if (current.data >= x){
-            this.insertLast(current)
-            this.head = current.next
+        while (current){
+            current = current.next
         }
     }
 }
@@ -69,9 +68,11 @@ const ll = new LinkedList()
 
 ll.insertFirst(1)
 ll.insertFirst(3)
+ll.insertFirst(5)
+ll.insertLast(6)
 
 ll.logData()
 
-ll.partition(2)
+ll.partition(4)
 console.log("Post partition")
 ll.logData()
