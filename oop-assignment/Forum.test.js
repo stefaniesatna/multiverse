@@ -1,12 +1,13 @@
 import Forum from "./Forum.js"
 import Page from "./Page.js"
+import User from "./User.js"
 
 test("createUser() adds a user to users object", () => {
     const forum = new Forum()
     const user = {id: 1, userName: "Bilbo Baggins"}
     forum.createUser(user)
     expect(forum.users[user.id]).toBeDefined()
-    expect(forum.users[user.id]).toEqual({id: 1, userName: "Bilbo Baggins"})
+    expect(forum.users[user.id]).toEqual(new User(user.id, user.userName))
 })
 
 test("createUser() doesn't allow to rewrite an existing userId", () => {
