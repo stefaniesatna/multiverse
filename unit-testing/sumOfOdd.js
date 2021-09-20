@@ -17,5 +17,3 @@ export default function sumOfOdd(arr) {
 
   return arr.filter((el) => el % 2 !== 0).reduce((acc, curr) => acc + curr);
 }
-
-console.log(sumOfOdd([2]))
