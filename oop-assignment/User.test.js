@@ -25,8 +25,8 @@ test("writePost() adds a post to user's posts property", () => {
   expect(user.posts[post.id]).toBeDefined();
 });
 
-// TODO: Needs a callback to be passed down 
+// TODO: Needs a callback to be passed down
 test("writePost() adds a post to the page's posts property", () => {
-    user.writePost(post)
-    expect(page.posts[post.id]).toBeDefined()
+  user.writePost(post);
+  expect(page.posts[post.id]).toBeDefined();
 });
