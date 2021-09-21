@@ -27,11 +27,11 @@ export default class Forum {
     }
 
     const userNames = Object.keys(this.users).length
-    ? Object.keys(this.pages).map((id) => this.pages[id].title)
+    ? Object.keys(this.users).map((id) => this.users[id].userName)
     : [];
 
     if(userNames.some((userName) => userName === user.userName)){
-        "User with this user name already exists. Can't create user."
+        throw new Error("User with this user name already exists. Can't create user.")
     }
     this.users[user.id] = user;
   }
