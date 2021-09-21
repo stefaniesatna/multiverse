@@ -5,4 +5,5 @@ export default class Page {
         this.users = {}
         this.posts = {}
     }
+    
 }
