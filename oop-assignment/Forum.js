@@ -1,43 +1,40 @@
-import Page from "./Page.js";
-import User from "./User.js";
-
 export default class Forum {
-  constructor(users = {}, pages = {}) {
-    this.users = users;
-    this.pages = pages;
+  constructor() {
+    this.users = {};
+    this.pages = {};
   }
-
-  createUser({ id, userName }) {
-    if (this.users[id]) {
-      throw new Error("User with this id already exists, can't create user");
+  createNewPage(page) {
+    if (this.pages[page.id]) {
+      throw new Error("Page with this id already exists. Can't create page.");
     }
-    const user = new User(id, userName);
-    this.users[id] = user;
-  }
 
-  createPage({ id, title }) {
-    if (this.pages[id]) {
-      throw new Error("page with this id already exists, can't create page");
-    }
-    const titles = Object.keys.length
+    const titles = Object.keys(this.pages).length
       ? Object.keys(this.pages).map((id) => this.pages[id].title)
       : [];
-    if (titles.some((t) => t === title)) {
-      throw new Error("page with this title already exists, can't create page");
+
+    if (titles.some((title) => title === page.title)) {
+      throw new Error(
+        "Page with this title already exists. Can't create page."
+      );
     }
-    const page = new Page(id, title);
-    this.pages[id] = page;
+
+    this.pages[page.id] = page;
   }
 
-  deleteUser(id) {
-    if (this.users[id]) {
-      delete this.users[id];
-    } else return;
-  }
+  createNewUser(user) {
+    if (this.users[user.id]) {
+      throw new Error("User with this id already exists. Can't create user.");
+    }
 
-  deletePage(id) {
-    if (this.pages[id]) {
-      delete this.pages[id];
-    } else return;
+    const userNames = Object.keys(this.users).length
+      ? Object.keys(this.users).map((id) => this.users[id].userName)
+      : [];
+
+    if (userNames.some((userName) => userName === user.userName)) {
+      throw new Error(
+        "User with this user name already exists. Can't create user."
+      );
+    }
+    this.users[user.id] = user;
   }
 }

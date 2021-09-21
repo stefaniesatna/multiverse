@@ -1,8 +1,7 @@
 export default class Page {
-  constructor(id, title) {
+  constructor({ id, title }) {
     this.id = id;
     this.title = title;
-    this.users = {};
-    this.posts = {};
+    this.posts = {}
   }
 }
