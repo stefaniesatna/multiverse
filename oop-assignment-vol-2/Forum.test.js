@@ -67,7 +67,7 @@ test("createNewUser() throws an error when trying to create a user with a userNa
   const u2 = new User({ id: 2, userName: "Stefanie" });
 
   forum.createNewUser(u1);
-  console.log(forum.users)
+  console.log(forum.users);
   expect(() => forum.createNewUser(u2)).toThrowError(
     "User with this user name already exists. Can't create user."
   );
