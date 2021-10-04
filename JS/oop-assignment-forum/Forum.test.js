@@ -2,8 +2,6 @@ import Forum from "./Forum.js";
 import Page from "./Page.js";
 import User from "./User.js";
 
-// createNewPage()
-
 test("createNewPage() creates new page in pages object", () => {
   const forum = new Forum();
   const p = { title: "Multiverse"}
