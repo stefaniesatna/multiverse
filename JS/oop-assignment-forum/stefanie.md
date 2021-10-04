@@ -24,4 +24,6 @@ Very good work, Stefanie, impressed by this!
         );```
     ````
 
-    think i'd wrap this in a `usernameExists(username)` method
+    think i'd wrap this in a `usernameExists(username)` method ✅
+    // Improve the method to use Object.values
+- change tests

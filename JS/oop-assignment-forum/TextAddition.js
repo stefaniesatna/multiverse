@@ -1,6 +1,5 @@
 export default class TextAddition {
-    constructor({ id, text }) {
-      this.id = id;
+    constructor({ text }) {
       this.text = text;
     }
   }

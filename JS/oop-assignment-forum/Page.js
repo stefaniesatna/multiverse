@@ -2,11 +2,13 @@ export default class Page {
   constructor({ title }) {
     this.title = title;
     this.posts = {}
+    this.postsMaxId = 0
   }
+
   createPost(post){
-    if (this.posts[post.id]) {
-      throw new Error("Post with this id already exists. Can't create post.");
-    }
-    this.posts[post.id] = post
+    const id = this.postsMaxId + 1
+    post.id = id
+    this.posts[id] = post
+    this.postsMaxId++
   }
 }

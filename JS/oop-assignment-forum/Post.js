@@ -1,19 +1,17 @@
 import TextAddition from "./TextAddition.js";
 
 export default class Post extends TextAddition{
-  constructor({ id, text, title }) {
-    super({id, text})
+  constructor({ text, title }) {
+    super({ text })
     this.title = title;
     this.comments = {};
+    this.maxCommentId = 0
   }
-  
-  createComment(comment){
-    if (this.comments[comment.id]) {
-      throw new Error(
-        "Comment with this id already exists. Can't create comment."
-      );
-    }
 
-    this.comments[comment.id] = comment
+  createComment(comment){
+    const id = this.maxCommentId + 1
+    comment.id = id
+    this.comments[id] = comment
+    this.maxCommentId++
   }
 }
