@@ -7,11 +7,7 @@ export default class Forum {
   }
   
   createNewPage(page) {
-    const titles = Object.keys(this.pages).length
-      ? Object.keys(this.pages).map((id) => this.pages[id].title)
-      : [];
-
-    if (titles.some((title) => title === page.title)) {
+    if(this.pageTitleExists(page)){
       throw new Error(
         "Page with this title already exists. Can't create page."
       );
@@ -47,6 +43,17 @@ export default class Forum {
     }
 
     return false
+  }
+
+  pageTitleExists(page){
+    const titles = Object.keys(this.pages).length
+    ? Object.keys(this.pages).map((id) => this.pages[id].title)
+    : [];
+
+    if (titles.some((title) => title === page.title)) {
+      return true
+    }
     
+    return false;
   }
 }

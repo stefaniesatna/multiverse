@@ -7,7 +7,7 @@ Very good work, Stefanie, impressed by this!
 -   I like that you've made the forum its own class. I think it should be responsible
     for keeping track of maxId for user and pages and assigning them itself, in the same way
     an SQL table does. ✅
-    // do similar for posts and comments
+    // do similar for posts and comments ✅
 -   Post and Comment could inherit from a base class e.g. TextAddition. They're likely
     to share functionality (deleted by their author, be liked, disliked etc.) ✅
 -   `page.posts[post.id] = post;` I'd rather User called a method on the page class
@@ -25,5 +25,6 @@ Very good work, Stefanie, impressed by this!
     ````
 
     think i'd wrap this in a `usernameExists(username)` method ✅
+    // for pageNames too
     // Improve the method to use Object.values
 - change tests
