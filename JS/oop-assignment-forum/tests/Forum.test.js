@@ -1,6 +1,6 @@
-import Forum from "./Forum.js";
-import Page from "./Page.js";
-import User from "./User.js";
+import Forum from "../Forum.js";
+import Page from "../Page.js";
+import User from "../User.js";
 
 test("createNewPage() creates new page in pages object", () => {
   const forum = new Forum();

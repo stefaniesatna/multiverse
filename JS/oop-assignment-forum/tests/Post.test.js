@@ -1,5 +1,5 @@
-import Comment from "./Comment.js"
-import Post from "./Post.js"
+import Comment from "../Comment.js"
+import Post from "../Post.js"
 
 test("createComment() creates comment in comments object", () => {
     const post = new Post({title: "Super cool ride", text: "Look at this twisty ride"})

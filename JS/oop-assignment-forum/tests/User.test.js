@@ -1,7 +1,7 @@
-import User from "./User.js"
-import Page from "./Page.js"
-import Post from "./Post.js"
-import Comment from "./Comment.js"
+import User from "../User.js"
+import Page from "../Page.js"
+import Post from "../Post.js"
+import Comment from "../Comment.js"
 
 test("writePost() creates new post in posts object on page", () => {
     const p = { title: "Grouping", text: "We're really nailing the distribution 😅"}
