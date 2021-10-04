@@ -3,17 +3,10 @@ export default class User {
     this.userName = userName;
   }
   writePost(post, page) {
-    if (page.posts[post.id]) {
-      throw new Error("Post with this id already exists. Can't create post.");
-    }
-    page.posts[post.id] = post;
+    page.createPost(post)
   }
   writeComment(comment, post) {
-    if (post.comments[comment.id]) {
-      throw new Error(
-        "Comment with this id already exists. Can't create comment."
-      );
-    }
+    post.createComment(comment)
     post.comments[comment.id] = comment;
   }
 }
