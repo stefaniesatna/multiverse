@@ -2,11 +2,10 @@ export default class Forum {
   constructor() {
     this.users = {};
     this.pages = {};
+    this.usersMaxId = 0
+    this.pagesMaxId = 0
   }
   createNewPage(page) {
-    if (this.pages[page.id]) {
-      throw new Error("Page with this id already exists. Can't create page.");
-    }
 
     const titles = Object.keys(this.pages).length
       ? Object.keys(this.pages).map((id) => this.pages[id].title)
@@ -17,14 +16,14 @@ export default class Forum {
         "Page with this title already exists. Can't create page."
       );
     }
-
-    this.pages[page.id] = page;
+    
+    const id = this.pagesMaxId + 1
+    page.id = id
+    this.pages[id] = page;
+    this.pagesMaxId++
   }
 
   createNewUser(user) {
-    if (this.users[user.id]) {
-      throw new Error("User with this id already exists. Can't create user.");
-    }
 
     const userNames = Object.keys(this.users).length
       ? Object.keys(this.users).map((id) => this.users[id].userName)
@@ -35,6 +34,10 @@ export default class Forum {
         "User with this user name already exists. Can't create user."
       );
     }
-    this.users[user.id] = user;
+
+    const id = this.usersMaxId + 1
+    user.id = id
+    this.users[id] = user;
+    this.usersMaxId++
   }
 }

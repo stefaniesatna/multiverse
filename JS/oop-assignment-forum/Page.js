@@ -1,6 +1,5 @@
 export default class Page {
-  constructor({ id, title }) {
-    this.id = id;
+  constructor({ title }) {
     this.title = title;
     this.posts = {}
   }

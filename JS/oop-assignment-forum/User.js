@@ -1,6 +1,5 @@
 export default class User {
-  constructor({ id, userName }) {
-    this.id = id;
+  constructor({ userName }) {
     this.userName = userName;
   }
   writePost(post, page) {
