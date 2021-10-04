@@ -34,8 +34,8 @@ export default class Forum {
   }
 
   userNameExists(user){
-    const userNames = Object.keys(this.users).length
-    ? Object.keys(this.users).map((id) => this.users[id].userName)
+    const userNames = Object.values(this.users)
+    ? Object.values(this.users).map((user) => user.userName)
     : [];
 
     if (userNames.some((userName) => userName === user.userName)) {
@@ -46,8 +46,8 @@ export default class Forum {
   }
 
   pageTitleExists(page){
-    const titles = Object.keys(this.pages).length
-    ? Object.keys(this.pages).map((id) => this.pages[id].title)
+    const titles = Object.values(this.pages)
+    ? Object.values(this.pages).map((page) => page.title)
     : [];
 
     if (titles.some((title) => title === page.title)) {
