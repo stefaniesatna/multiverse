@@ -1,6 +1,7 @@
-export default class Comment {
+import TextAddition from "./TextAddition.js"
+
+export default class Comment extends TextAddition{
     constructor({id, text}){
-        this.id = id
-        this.text = text
+        super({id, text})
     }
 }

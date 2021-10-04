@@ -6,7 +6,7 @@ Very good work, Stefanie, impressed by this!
 
 -   I like that you've made the forum its own class. I think it should be responsible
     for keeping track of maxId for user and pages and assigning them itself, in the same way
-    an SQL table does.
+    an SQL table does. ✅
 -   Post and Comment could inherit from a base class e.g. TextAddition. They're likely
     to share functionality (deleted by their author, be liked, disliked etc.)
 -   `page.posts[post.id] = post;` I'd rather User called a method on the page class

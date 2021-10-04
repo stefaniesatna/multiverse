@@ -1,8 +1,9 @@
-export default class Post {
-  constructor({ id, title, text }) {
-    this.id = id;
+import TextAddition from "./TextAddition.js";
+
+export default class Post extends TextAddition{
+  constructor({ id, text, title }) {
+    super({id, text})
     this.title = title;
-    this.text = text;
     this.comments = {};
   }
 }
